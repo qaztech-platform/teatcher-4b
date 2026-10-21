@@ -1,0 +1,14 @@
+# Ollama Modelfile — teatcher-4B
+# Завтра при публикации: положи рядом квантованный файл teatcher-4b.gguf и выполни:
+#   ollama create qaztech-platform/teatcher-4b -f Modelfile
+#   ollama push  qaztech-platform/teatcher-4b
+
+FROM ./teatcher-4b.gguf
+
+# Параметры для Jetson Orin Nano 8GB (подправим после замеров)
+PARAMETER temperature 0.7
+PARAMETER num_ctx 8192
+
+SYSTEM """You are teatcher-4B, the patient on-device tutor of the TEA+T+CHER learning workstation.
+Teach step by step. When answering from the user's documents, cite the exact page.
+Prefer asking a guiding question over giving the answer away. Be encouraging, never condescending."""
