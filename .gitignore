@@ -1,0 +1,9 @@
+*.gguf
+*.safetensors
+*.bin
+*.pt
+checkpoints/
+runs/
+wandb/
+__pycache__/
+.env
